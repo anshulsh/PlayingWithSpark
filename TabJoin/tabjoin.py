@@ -5,8 +5,8 @@ sc = SparkContext(conf=conf)
 def Mapper(s):
 	return (s.split(',')[0],s.split(',')[1])
 
-dist1=sc.textFile('/home/administrator/Devel/TabJoin/file01')
-dist2=sc.textFile('/home/administrator/Devel/TabJoin/file02')
+dist1=sc.textFile('./file01')
+dist2=sc.textFile('./file02')
 
 d1=dist1.map(Mapper)
 d2=dist2.map(Mapper)
